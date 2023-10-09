@@ -1,5 +1,27 @@
+@font-face {
+  font-family: NotoJapan;
+  src: url("./assets/fonts/NotoSansJP-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: Poppins;
+}
+.form-group input {
+  display: block;
+  border: none;
+}
+.button {
+  width: 100%;
+  padding: 8px 0px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
