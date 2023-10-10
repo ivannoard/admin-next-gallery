@@ -5,3 +5,7 @@ export type FormType = {
   type: string;
   labelFor: string;
 } & React.ComponentPropsWithoutRef<"input">;
+
+export type PageTitle = {
+  text: string;
+};

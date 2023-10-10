@@ -1,5 +1,6 @@
 import React from "react";
 import { capitalizeWord } from "../../utils/words";
+import "./atoms.scss";
 
 type ButtonType = {
   name: string;

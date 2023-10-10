@@ -1,4 +1,4 @@
-import { ChildrenComponent } from "../../utils/types";
+import { ChildrenComponent } from "../../../utils/types";
 
 const AuthLayout = ({ children }: ChildrenComponent) => {
   return (
