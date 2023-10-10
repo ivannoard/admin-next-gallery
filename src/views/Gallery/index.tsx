@@ -1,6 +1,5 @@
-import React from "react";
-import "./gallery.scss";
 import { PageTitle } from "../../components/atoms";
+import "./gallery.scss";
 const Gallery = () => {
   return (
     <>

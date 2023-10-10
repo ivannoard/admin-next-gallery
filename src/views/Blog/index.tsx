@@ -1,6 +1,5 @@
-import React from "react";
-import "./blog.scss";
 import { PageTitle } from "../../components/atoms";
+import "./blog.scss";
 const Blog = () => {
   return (
     <>
