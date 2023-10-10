@@ -1,6 +1,7 @@
 import { AiTwotoneHome, AiFillSetting } from "react-icons/ai";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { RiGalleryFill } from "react-icons/ri";
+import { BsFillCameraFill } from "react-icons/bs";
 
 export const sideNav = [
   {
@@ -20,6 +21,12 @@ export const sideNav = [
     name: "gallery",
     path: "/gallery",
     icon: <RiGalleryFill />,
+  },
+  {
+    id: 4,
+    name: "upload photos",
+    path: "/photos",
+    icon: <BsFillCameraFill />,
   },
   {
     id: 4,

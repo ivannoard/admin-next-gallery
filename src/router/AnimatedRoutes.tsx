@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { DashboardLayout } from "../components/layouts";
-import { Blog, Dashboard, Gallery, Login, Settings } from "../views";
+import { Blog, Dashboard, Gallery, Login, Photos, Settings } from "../views";
 
 const CantGoBack = () => {
   const auth = localStorage.getItem("data_user");
@@ -25,6 +25,7 @@ const AnimatedRoutes = () => {
             <Route index path="/" element={<Dashboard />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/photos" element={<Photos />} />
             <Route path="/settings" element={<Settings />} />
           </Route>
         </Route>

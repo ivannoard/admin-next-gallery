@@ -8,6 +8,18 @@
       position: fixed;
       margin-left: 4rem;
       height: 100%;
+      input {
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        padding: 4px 16px;
+        border: 1px solid #e8edef;
+        outline: none;
+        transition: 0.3s ease;
+        &:focus {
+          border: 1px solid #88a3ae;
+        }
+      }
     }
   }
 }

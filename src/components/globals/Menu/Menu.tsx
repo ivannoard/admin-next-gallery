@@ -1,10 +1,16 @@
-import React from "react";
 import "./menu.scss";
 
 const Menu = () => {
   return (
     <>
-      <div className="menu">asd</div>
+      <div className="menu">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search something. . ."
+        />
+      </div>
     </>
   );
 };
