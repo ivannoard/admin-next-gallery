@@ -9,3 +9,9 @@ export type FormType = {
 export type PageTitle = {
   text: string;
 };
+export type Dropzone = {
+  setDropzoneFiles: React.Dispatch<React.SetStateAction<File[]>>;
+};
+export type Modal = {
+  image: string;
+};

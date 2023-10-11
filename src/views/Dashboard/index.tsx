@@ -16,13 +16,13 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="visitor-overview">
-          <h3>Visitors</h3>
+          <h3 className="sub-pagetitle">Visitors</h3>
         </div>
         <div className="blog-overview">
-          <h3>Blog</h3>
+          <h3 className="sub-pagetitle">Blog</h3>
         </div>
         <div className="gallery-overview">
-          <h3>Gallery</h3>
+          <h3 className="sub-pagetitle">Gallery</h3>
         </div>
       </section>
     </>

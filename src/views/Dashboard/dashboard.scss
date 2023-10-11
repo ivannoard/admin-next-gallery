@@ -1,18 +1,7 @@
-.dashboard-overview,
 .visitor-overview,
 .blog-overview,
 .gallery-overview {
   margin-top: 20px;
-}
-.visitor-overview h3::before,
-.blog-overview h3::before,
-.gallery-overview h3::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
-  display: inline-block;
-  background-color: #9bdbf0;
 }
 .dashboard-overview {
   .card-container {

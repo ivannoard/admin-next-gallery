@@ -4,7 +4,7 @@ import "./atoms.scss";
 
 type ButtonType = {
   name: string;
-  classButton: string;
+  classButton?: string;
 } & React.ComponentPropsWithRef<"button">;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonType>(

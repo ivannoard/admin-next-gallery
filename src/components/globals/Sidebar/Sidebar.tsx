@@ -10,7 +10,8 @@ const Sidebar = () => {
       <div className="sidebar-container">
         <div className="sidebar-menus">
           {sideNav.map((item) => (
-            <a
+            <div
+              key={item.name}
               data-tooltip-id={item.name}
               data-tooltip-content={capitalizeWord(item.name)}
               data-tooltip-place="right"
@@ -20,7 +21,7 @@ const Sidebar = () => {
               <NavLink to={item.path} className="sidebar-menu" key={item.id}>
                 {item.icon}
               </NavLink>
-            </a>
+            </div>
           ))}
         </div>
       </div>
