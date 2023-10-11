@@ -17,7 +17,7 @@ const ModalPreview = ({
     <>
       {isOpenModalPreview && (
         <div
-          className="modal-overlay"
+          className="modal-overlay flex-center"
           onClick={() => setIsOpenModalPreview(false)}
         >
           <LoadPage>

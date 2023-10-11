@@ -1,7 +1,22 @@
 .form-group {
+  label {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
   input {
     display: block;
     border: none;
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid #e8edef;
+    outline: none;
+    transition: 0.3s ease;
+    &:focus {
+      border: 1px solid #9bdbf0;
+    }
   }
 }
 
@@ -32,6 +47,17 @@
 }
 .button-danger:hover {
   background-color: #ed443c;
+}
+.button-outline {
+  background: transparent;
+  border: 1px solid #9bdbf0;
+}
+.button-primary {
+  background: #9bdbf0;
+  border: 1px solid #6bd5f9;
+}
+.button-primary:hover {
+  background: #6bd5f9;
 }
 // page title
 .page-title-wrapper {

@@ -1,14 +1,11 @@
 .modal-overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   top: 0px;
   left: 0px;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 100px;
   .modal-preview {
     display: flex;
@@ -20,6 +17,39 @@
       height: auto;
       max-height: 800px;
       object-fit: cover;
+    }
+  }
+  .modal-content {
+    background-color: white;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 4px;
+    // text-align: center;
+    .modal-title {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .modal-preview-edit {
+      margin: 10px 0px 20px 0px;
+      form {
+        margin: 10px 0px;
+      }
+      .modal-preview-image-wrapper {
+        width: 100%;
+        height: 300px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
     }
   }
 }

@@ -8,9 +8,14 @@ type ButtonType = {
 } & React.ComponentPropsWithRef<"button">;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonType>(
-  ({ name, classButton }, ref) => {
+  ({ name, classButton, ...rest }, ref) => {
     return (
-      <button className={`button ${classButton}`} ref={ref}>
+      <button
+        type="button"
+        className={`button ${classButton}`}
+        ref={ref}
+        {...rest}
+      >
         {capitalizeWord(name)}
       </button>
     );
