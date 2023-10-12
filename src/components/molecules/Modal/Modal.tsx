@@ -31,7 +31,6 @@ const Modal = ({
   isOpen,
   size,
 }: ModalType & ModalDataType) => {
-  console.log(data);
   const modalSize = { sm: "30%", md: "50%", lg: "70%" };
   const [modalTitle, setModalTitle] = React.useState<string>("");
   const [modalContent, setModalContent] = React.useState<JSX.Element>();
@@ -61,7 +60,9 @@ const Modal = ({
             >
               <h4 className="modal-title">{modalTitle}</h4>
               {modalContent}
-              <div className="buttons">
+              <div
+                className={`buttons ${type === "preview-delete" ? "flex" : ""}`}
+              >
                 <Button
                   name="cancel"
                   classButton="button-outline"
@@ -70,7 +71,10 @@ const Modal = ({
                     setModalContent(undefined);
                   }}
                 />
-                <Button name="save" classButton="button-primary" />
+                <Button
+                  name={type === "preview-delete" ? "delete" : "save"}
+                  classButton="button-primary"
+                />
               </div>
             </div>
           </LoadPage>

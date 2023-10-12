@@ -1,10 +1,14 @@
+import React from "react";
+import { BsThreeDots } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import { LayoutContext } from "../../../context/LayoutContext";
+import { capitalizeWord } from "../../../utils/words";
 import { sideNav } from "./dummy";
 import "./sidebar.scss";
-import "react-tooltip/dist/react-tooltip.css";
-import { Tooltip } from "react-tooltip";
-import { capitalizeWord } from "../../../utils/words";
 const Sidebar = () => {
+  const { showMenu, funcShowHideMenu } = React.useContext(LayoutContext);
   return (
     <>
       <div className="sidebar-container">
@@ -23,6 +27,18 @@ const Sidebar = () => {
               </NavLink>
             </div>
           ))}
+          <div
+            data-tooltip-id={"show-menu"}
+            data-tooltip-content={capitalizeWord("show menu")}
+            data-tooltip-place="right"
+            className="custom-tooltip sidebar-menu"
+            onClick={() =>
+              funcShowHideMenu(showMenu === "show" ? "hide" : "show")
+            }
+          >
+            <Tooltip id={"show-menu"} />
+            <BsThreeDots />
+          </div>
         </div>
       </div>
     </>

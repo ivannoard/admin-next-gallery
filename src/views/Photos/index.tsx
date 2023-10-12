@@ -42,13 +42,13 @@ const Photos = () => {
         setIsOpenModalPreview={setIsOpenModalPreview}
         isOpenModalPreview={isOpenModalPreview}
       />
-      <section>
+      <section className="photos-wrapper">
         <PageTitle text="Photos" />
         <Dropzone setDropzoneFiles={setDropzoneFiles} />
         {dropzoneFiles.length > 0 && (
           <>
             <h3 className="sub-pagetitle">Preview Photos</h3>
-            <table className="preview-photos-table">
+            <table className="table">
               <thead>
                 <tr>
                   <th>No</th>
@@ -64,20 +64,20 @@ const Photos = () => {
                     <td>{index + 1}</td>
                     <td>
                       <div
-                        className="preview-image-wrapper"
+                        className="table-image-wrapper"
                         onClick={() => handleOpenModalPreview(item)}
                       >
                         <img
                           src={handleImageUrl(item)}
                           alt={item.name}
-                          className="preview-image"
+                          className="table-image"
                         />
                       </div>
                     </td>
                     <td>{item.name}</td>
                     <td>{item.type}</td>
                     <td>
-                      <div className="preview-buttons">
+                      <div className="table-buttons">
                         <Button
                           name="Edit"
                           classButton="button-warning"
@@ -101,6 +101,56 @@ const Photos = () => {
           </>
         )}
         <h3 className="sub-pagetitle">List Photos</h3>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dropzoneFiles.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>
+                  <div
+                    className="table-image-wrapper"
+                    onClick={() => handleOpenModalPreview(item)}
+                  >
+                    <img
+                      src={handleImageUrl(item)}
+                      alt={item.name}
+                      className="table-image"
+                    />
+                  </div>
+                </td>
+                <td>{item.name}</td>
+                <td>{item.type}</td>
+                <td>
+                  <div className="table-buttons">
+                    <Button
+                      name="Edit"
+                      classButton="button-warning"
+                      onClick={() =>
+                        handleButtonAction("list-photo-edit", item)
+                      }
+                    />
+                    <Button
+                      name="Delete"
+                      classButton="button-danger"
+                      onClick={() =>
+                        handleButtonAction("list-photo-delete", item)
+                      }
+                    />
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </>
   );

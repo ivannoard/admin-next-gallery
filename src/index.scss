@@ -1,0 +1,90 @@
+@font-face {
+  font-family: NotoJapan;
+  src: url("./assets/fonts/NotoSansJP-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+th,
+td,
+label {
+  color: #2b2b2b;
+}
+
+.flex {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px;
+}
+
+.sub-pagetitle::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: #9bdbf0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  width: 100%;
+  box-shadow: 1px 4px 4px rgba(43, 43, 43, 0.2);
+  border-radius: 4px;
+  // border: 1px solid #2b2b2b;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  thead {
+    th {
+      border: 1px solid rgba(43, 43, 43, 0.2);
+      background-color: #9bdbf0;
+      color: white;
+      padding: 16px 0px;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border: 1px solid rgba(43, 43, 43, 0.2);
+        padding: 10px 10px;
+        .table-image-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .table-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid #2b2b2b;
+          }
+        }
+        .table-buttons {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

@@ -50,7 +50,7 @@ const Login = () => {
             onChange={handleChange}
             required
           />
-          <Button name="login" classButton={"auth-button"} />
+          <Button type="submit" name="login" classButton={"auth-button"} />
         </form>
       </div>
     </AuthLayout>

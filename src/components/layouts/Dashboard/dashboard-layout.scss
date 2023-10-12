@@ -6,8 +6,16 @@
     .main-content {
       padding: 16px 10px;
       height: 1000px;
-      margin-left: 20rem;
       width: 100%;
+      transition: 0.7s ease;
     }
   }
+}
+.show-main-content {
+  // transform: translateX(20rem);
+  margin-left: 20rem;
+}
+.hide-main-content {
+  transform: translateX(4rem);
+  width: 95.5% !important;
 }

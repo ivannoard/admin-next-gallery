@@ -6,8 +6,8 @@
       padding: 16px 10px;
       border-right: 2px solid #e8edef;
       position: fixed;
-      margin-left: 4rem;
       height: 100%;
+      transition: 0.7s ease;
       input {
         width: 100%;
         background: white;
@@ -22,4 +22,10 @@
       }
     }
   }
+}
+.hide-menu {
+  transform: translateX(-20rem);
+}
+.show-menu {
+  transform: translateX(4rem);
 }
