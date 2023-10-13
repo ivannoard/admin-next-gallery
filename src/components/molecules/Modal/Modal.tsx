@@ -6,6 +6,8 @@ import { Button, FormGroup } from "../../atoms";
 type ModalDataType = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
+  dataPreviewImages?: File[];
+  setDataPreviewImages?: React.Dispatch<React.SetStateAction<File[]>>;
 };
 
 function ModalPreviewEdit({ data, image }: ModalType) {
@@ -30,10 +32,29 @@ const Modal = ({
   setIsOpen,
   isOpen,
   size,
+  dataPreviewImages,
+  setDataPreviewImages,
 }: ModalType & ModalDataType) => {
   const modalSize = { sm: "30%", md: "50%", lg: "70%" };
   const [modalTitle, setModalTitle] = React.useState<string>("");
   const [modalContent, setModalContent] = React.useState<JSX.Element>();
+
+  function handleDeleteButton(type: string) {
+    switch (type) {
+      case "preview-delete":
+        if (dataPreviewImages && data) {
+          setDataPreviewImages(
+            dataPreviewImages?.filter((item) => item.name !== data.name)
+          );
+          setIsOpen(false);
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
   useEffect(() => {
     switch (type) {
       case "preview-edit":
@@ -74,6 +95,7 @@ const Modal = ({
                 <Button
                   name={type === "preview-delete" ? "delete" : "save"}
                   classButton="button-primary"
+                  onClick={() => handleDeleteButton(type as string)}
                 />
               </div>
             </div>

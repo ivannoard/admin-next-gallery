@@ -22,7 +22,7 @@ const Sidebar = () => {
               className="custom-tooltip"
             >
               <Tooltip id={item.name} />
-              <NavLink to={item.path} className="sidebar-menu" key={item.id}>
+              <NavLink to={item.path} className="button-icon" key={item.id}>
                 {item.icon}
               </NavLink>
             </div>
@@ -31,7 +31,7 @@ const Sidebar = () => {
             data-tooltip-id={"show-menu"}
             data-tooltip-content={capitalizeWord("show menu")}
             data-tooltip-place="right"
-            className="custom-tooltip sidebar-menu"
+            className="custom-tooltip button-icon"
             onClick={() =>
               funcShowHideMenu(showMenu === "show" ? "hide" : "show")
             }

@@ -1,6 +1,6 @@
-import { FormType } from "../../utils/types";
-import { capitalizeWord } from "../../utils/words";
-import "./atoms.scss";
+import { FormType } from "../../../utils/types";
+import { capitalizeWord } from "../../../utils/words";
+import "./form-group.scss";
 
 const FormGroup = ({ labelFor, type, ...rest }: FormType) => {
   return (

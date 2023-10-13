@@ -1,6 +1,6 @@
 import React from "react";
-import { capitalizeWord } from "../../utils/words";
-import "./atoms.scss";
+import { capitalizeWord } from "../../../utils/words";
+import "./button-badge.scss";
 
 type ButtonType = {
   name: string;

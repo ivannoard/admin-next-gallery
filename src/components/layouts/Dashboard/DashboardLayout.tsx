@@ -6,7 +6,6 @@ import { LayoutContext } from "../../../context/LayoutContext";
 
 const DashboardLayout = () => {
   const { showMenu } = React.useContext(LayoutContext);
-  console.log(showMenu);
   return (
     <>
       <main className="home-wrapper">

@@ -1,0 +1,75 @@
+// buttons
+.button {
+  width: 100%;
+  padding: 8px 0px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.button-warning,
+.button-danger,
+.button-primary {
+  font-weight: bold;
+  color: white;
+}
+.button-warning,
+.badge-warning {
+  background-color: #ff9946;
+  border: 1px solid #feb556;
+}
+.button-warning:hover {
+  background-color: #feb556;
+}
+.button-danger,
+.badge-danger {
+  background-color: #ff6961;
+  border: 1px solid #ed443c;
+}
+.button-danger:hover {
+  background-color: #ed443c;
+}
+.button-outline,
+.badge-outline {
+  background: transparent;
+  border: 1px solid #9bdbf0;
+  color: #9bdbf0;
+}
+.button-primary,
+.badge-primary {
+  background: #9bdbf0;
+  border: 1px solid #6bd5f9;
+}
+.button-primary:hover {
+  background: #6bd5f9;
+}
+
+.button-icon {
+  border: 1px solid #c8dfe7;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #373737;
+  transition: 1s ease;
+  cursor: pointer;
+  svg {
+    fill: #9ad2ea;
+    transition: 1s ease;
+  }
+}
+.button-icon.active {
+  background-color: #9bdbf0;
+  svg {
+    fill: #ffffff;
+  }
+}
+
+// badge
+.badge {
+  padding: 3px 5px;
+  border-radius: 10px;
+  font-size: 12px;
+}

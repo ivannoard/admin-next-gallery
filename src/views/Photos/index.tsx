@@ -1,6 +1,10 @@
 import React from "react";
-import { Button, PageTitle } from "../../components/atoms";
+import { AiFillEdit } from "react-icons/ai";
+import { BsTrashFill } from "react-icons/bs";
+import { Tooltip } from "react-tooltip";
+import { PageTitle } from "../../components/atoms";
 import { Dropzone, Modal, ModalPreview } from "../../components/molecules";
+import { capitalizeWord } from "../../utils/words";
 import "./photos.scss";
 
 const Photos = () => {
@@ -35,6 +39,8 @@ const Photos = () => {
         data={modalData}
         type={modalType}
         image={previewImageModalData}
+        dataPreviewImages={dropzoneFiles}
+        setDataPreviewImages={setDropzoneFiles}
         size="md"
       />
       <ModalPreview
@@ -78,20 +84,30 @@ const Photos = () => {
                     <td>{item.type}</td>
                     <td>
                       <div className="table-buttons">
-                        <Button
-                          name="Edit"
-                          classButton="button-warning"
+                        <div
+                          data-tooltip-id={"photo-edit-button"}
+                          data-tooltip-content={capitalizeWord("edit")}
+                          data-tooltip-place="top"
+                          className="custom-tooltip button-icon"
                           onClick={() =>
                             handleButtonAction("preview-edit", item)
                           }
-                        />
-                        <Button
-                          name="Delete"
-                          classButton="button-danger"
+                        >
+                          <Tooltip id={"photo-edit-button"} />
+                          <AiFillEdit />
+                        </div>
+                        <div
+                          data-tooltip-id={"photo-delete-button"}
+                          data-tooltip-content={capitalizeWord("delete")}
+                          data-tooltip-place="top"
+                          className="custom-tooltip button-icon"
                           onClick={() =>
                             handleButtonAction("preview-delete", item)
                           }
-                        />
+                        >
+                          <Tooltip id={"photo-delete-button"} />
+                          <BsTrashFill />
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -131,20 +147,26 @@ const Photos = () => {
                 <td>{item.type}</td>
                 <td>
                   <div className="table-buttons">
-                    <Button
-                      name="Edit"
-                      classButton="button-warning"
-                      onClick={() =>
-                        handleButtonAction("list-photo-edit", item)
-                      }
-                    />
-                    <Button
-                      name="Delete"
-                      classButton="button-danger"
-                      onClick={() =>
-                        handleButtonAction("list-photo-delete", item)
-                      }
-                    />
+                    <div
+                      data-tooltip-id={"photo-edit-button"}
+                      data-tooltip-content={capitalizeWord("edit")}
+                      data-tooltip-place="top"
+                      className="custom-tooltip button-icon"
+                      onClick={() => handleButtonAction("preview-edit", item)}
+                    >
+                      <Tooltip id={"photo-edit-button"} />
+                      <AiFillEdit />
+                    </div>
+                    <div
+                      data-tooltip-id={"photo-delete-button"}
+                      data-tooltip-content={capitalizeWord("delete")}
+                      data-tooltip-place="top"
+                      className="custom-tooltip button-icon"
+                      onClick={() => handleButtonAction("preview-delete", item)}
+                    >
+                      <Tooltip id={"photo-delete-button"} />
+                      <BsTrashFill />
+                    </div>
                   </div>
                 </td>
               </tr>
