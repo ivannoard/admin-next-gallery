@@ -1,18 +1,24 @@
 .home-wrapper {
+  height: 100%;
   .content {
-    display: flex;
     padding-top: 65px;
-    position: relative;
     .main-content {
       padding: 16px 10px;
-      width: 100%;
+    }
+    .main-content,
+    .secondary-main-content {
       transition: 0.7s ease;
     }
   }
 }
-.show-main-content {
+.show-main-content,
+.show-secondary-main-content {
   // transform: translateX(20rem);
   margin-left: 20rem;
+}
+.hide-secondary-main-content {
+  transform: translateX(4rem);
+  width: 95.8% !important;
 }
 .hide-main-content {
   transform: translateX(4rem);

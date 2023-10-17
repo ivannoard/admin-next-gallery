@@ -1,4 +1,5 @@
 import { LayoutProvider } from "./LayoutContext";
+import { SideMenuProvider } from "./SideMenuContext";
 
 type ContextProps = {
   children: JSX.Element;
@@ -7,7 +8,9 @@ type ContextProps = {
 const AppContext = ({ children }: ContextProps) => {
   return (
     <>
-      <LayoutProvider>{children}</LayoutProvider>
+      <LayoutProvider>
+        <SideMenuProvider>{children}</SideMenuProvider>
+      </LayoutProvider>
     </>
   );
 };

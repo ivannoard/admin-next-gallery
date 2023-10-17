@@ -4,7 +4,7 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import "./page-title.scss";
 
-const PageTitle = ({ text, goBack }: PageTitleProps) => {
+const PageTitle = ({ text, goBack, size }: PageTitleProps) => {
   const navigate = useNavigate();
   return (
     <>
@@ -16,7 +16,12 @@ const PageTitle = ({ text, goBack }: PageTitleProps) => {
             style={{ cursor: "pointer" }}
           />
         )}
-        <h2 className="page-title">{text}</h2>
+        <h2
+          className="page-title"
+          style={{ fontSize: size ? `${size}em` : "1.5em" }}
+        >
+          {text}
+        </h2>
       </div>
     </>
   );

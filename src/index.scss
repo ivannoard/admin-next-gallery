@@ -26,6 +26,13 @@ label {
   color: #2b2b2b;
 }
 
+.underline {
+  cursor: pointer;
+}
+.underline:hover {
+  text-decoration: underline;
+}
+
 .flex {
   display: flex !important;
   flex-direction: row !important;

@@ -8,19 +8,19 @@ import QuillToolbar, {
   modules,
 } from "../../components/molecules/QuillEditor";
 import { LayoutContext } from "../../context/LayoutContext";
-const BlogAdd = () => {
+const BlogEdit = () => {
   const { showMenu } = React.useContext(LayoutContext);
   const [data, setData] = React.useState("");
 
   return (
     <>
-      <section className="blog-add">
-        <div className="blog-add-content">
-          <PageTitle text="Add New Post" goBack={true} />
+      <section className="blog-update">
+        <div className="blog-update-content">
+          <PageTitle text="Edit Post" goBack={true} />
           {/* <Dropzone setDropzoneFiles={setDropzoneFiles} /> */}
           <h3 className="sub-pagetitle">Choose Photos For Thumbnail</h3>
           <div
-            className={`blog-add-photos-wrapper ${
+            className={`blog-update-photos-wrapper ${
               showMenu === "show" ? "six-grid" : "seven-grid"
             }`}
           >
@@ -28,10 +28,10 @@ const BlogAdd = () => {
               1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
               20,
             ].map((item) => (
-              <div key={item} className="blog-add-photo"></div>
+              <div key={item} className="blog-update-photo"></div>
             ))}
           </div>
-          <Button name="save Thumbnails" classButton="button-primary" />
+          <Button name="Save Thumbnails" classButton="button-primary" />
           <h3 className="sub-pagetitle" style={{ margin: "10px 0px" }}>
             Write More
           </h3>
@@ -50,4 +50,4 @@ const BlogAdd = () => {
   );
 };
 
-export default BlogAdd;
+export default BlogEdit;

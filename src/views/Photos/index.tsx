@@ -6,6 +6,7 @@ import { PageTitle } from "../../components/atoms";
 import { Dropzone, Modal, ModalPreview } from "../../components/molecules";
 import { capitalizeWord } from "../../utils/words";
 import "./photos.scss";
+import { handleImageUrl } from "../../utils/utils";
 
 const Photos = () => {
   const [dropzoneFiles, setDropzoneFiles] = React.useState<File[]>([]);
@@ -16,9 +17,6 @@ const Photos = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [modalType, setModalType] = React.useState<string>("");
 
-  function handleImageUrl(fileImage: File) {
-    return URL.createObjectURL(fileImage);
-  }
   function handleOpenModalPreview(image: File): void {
     setIsOpenModalPreview(true);
     setPreviewImageModalData(handleImageUrl(image));
@@ -41,7 +39,7 @@ const Photos = () => {
         image={previewImageModalData}
         dataPreviewImages={dropzoneFiles}
         setDataPreviewImages={setDropzoneFiles}
-        size="md"
+        size="sm"
       />
       <ModalPreview
         image={previewImageModalData}

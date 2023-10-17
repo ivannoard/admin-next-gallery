@@ -62,7 +62,10 @@ const Modal = ({
         setModalContent(<ModalPreviewEdit data={data} image={image} />);
         break;
       case "preview-delete":
-        setModalTitle("Delete Preview Image");
+        setModalTitle("Delete Preview Image?");
+        break;
+      case "blog-delete":
+        setModalTitle("Delete Blog Post?");
         break;
       default:
         break;
@@ -82,7 +85,11 @@ const Modal = ({
               <h4 className="modal-title">{modalTitle}</h4>
               {modalContent}
               <div
-                className={`buttons ${type === "preview-delete" ? "flex" : ""}`}
+                className={`buttons ${
+                  type === "preview-delete" || type === "blog-delete"
+                    ? "flex"
+                    : ""
+                }`}
               >
                 <Button
                   name="cancel"

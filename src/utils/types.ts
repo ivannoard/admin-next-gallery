@@ -10,6 +10,7 @@ export type FormType = {
 export type PageTitle = {
   text: string;
   goBack?: boolean;
+  size?: number;
 };
 
 export type Dropzone = {

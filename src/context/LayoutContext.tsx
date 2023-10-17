@@ -5,14 +5,14 @@ type LayoutProvider = {
   children: JSX.Element;
 };
 type LayoutType = {
-  showMenu: "show" | "hide" | string;
+  showMenu: string;
 };
 type LayoutActionType = {
   type: "show" | "hide";
   payload: "show" | "hide";
 };
 const initialState = {
-  showMenu: "show",
+  showMenu: "",
 };
 
 const LayoutReducers = (state: LayoutType, action: LayoutActionType) => {

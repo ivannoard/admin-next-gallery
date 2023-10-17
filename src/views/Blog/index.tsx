@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Badge, Button, PageTitle, Swicth } from "../../components/atoms";
 import "./blog.scss";
@@ -8,10 +9,18 @@ import { BsTrashFill, BsFillRocketTakeoffFill } from "react-icons/bs";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { DiGoogleAnalytics } from "react-icons/di";
 import { Tooltip } from "react-tooltip";
+import { Modal } from "../../components/molecules";
 const Blog = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   return (
     <>
+      <Modal
+        setIsOpen={setIsModalOpen}
+        isOpen={isModalOpen}
+        type="blog-delete"
+        size="sm"
+      />
       <section>
         <PageTitle text="Blog" />
         <Button
@@ -92,6 +101,7 @@ const Blog = () => {
                       data-tooltip-content={capitalizeWord("edit")}
                       data-tooltip-place="top"
                       className="custom-tooltip button-icon"
+                      onClick={() => navigate("/blog/edit/1")}
                     >
                       <Tooltip id={"blog-edit-button"} />
                       <AiFillEdit />
@@ -101,6 +111,7 @@ const Blog = () => {
                       data-tooltip-content={capitalizeWord("delete")}
                       data-tooltip-place="top"
                       className="custom-tooltip button-icon"
+                      onClick={() => setIsModalOpen(true)}
                     >
                       <Tooltip id={"blog-delete-button"} />
                       <BsTrashFill />

@@ -1,0 +1,33 @@
+.blog-add,
+.blog-update {
+  height: calc(100vh - 65px);
+  display: flex;
+  justify-content: space-between;
+  .blog-add-content,
+  .blog-update-content {
+    padding: 16px 10px;
+    flex: 1;
+    .blog-add-photos-wrapper,
+    .blog-update-photos-wrapper {
+      width: 100%;
+      height: 300px;
+      // background-color: red;
+      display: grid;
+      gap: 10px;
+      overflow-y: scroll;
+      margin: 10px 0px;
+      .blog-add-photo,
+      .blog-update-photo {
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+      }
+    }
+  }
+}
+.seven-grid {
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+.six-grid {
+  grid-template-columns: auto auto auto auto auto auto;
+}
