@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { BlogPostMenu, LoadPage, Menu, Navbar, Sidebar } from "../../globals";
-import "./dashboard-layout.scss";
 import { LayoutContext } from "../../../context/LayoutContext";
+import { LoadPage, Menu, Navbar, Sidebar } from "../../globals";
+import "./dashboard-layout.scss";
 
 const SecondaryDashboardLayout = () => {
   const { state } = React.useContext(LayoutContext);

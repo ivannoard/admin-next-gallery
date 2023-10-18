@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
 import { useDropzone } from "React-dropzone";
+import { useEffect } from "react";
 import { BsFillCameraFill } from "react-icons/bs";
-import "./dropzone.scss";
 import { Dropzone as DropzoneType } from "../../../utils/types";
+import "./dropzone.scss";
 
 const Dropzone = ({ setDropzoneFiles }: DropzoneType) => {
   const { getRootProps, getInputProps, acceptedFiles } = useDropzone({});

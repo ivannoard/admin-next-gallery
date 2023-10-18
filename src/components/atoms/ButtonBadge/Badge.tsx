@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge as BadgeType } from "../../../utils/types";
 import "./button-badge.scss";
 

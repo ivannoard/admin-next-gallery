@@ -1,4 +1,3 @@
-import React from "react";
 import "./switch.scss";
 const Switch = () => {
   return (

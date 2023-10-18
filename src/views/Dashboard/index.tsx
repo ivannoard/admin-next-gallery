@@ -1,7 +1,6 @@
-import React from "react";
-import "./dashboard.scss";
 import { PageTitle } from "../../components/atoms";
 import { Card } from "../../components/molecules";
+import "./dashboard.scss";
 
 const Dashboard = () => {
   return (

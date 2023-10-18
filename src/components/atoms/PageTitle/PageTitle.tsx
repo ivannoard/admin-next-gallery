@@ -1,7 +1,6 @@
-import React from "react";
-import { PageTitle as PageTitleProps } from "../../../utils/types";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { PageTitle as PageTitleProps } from "../../../utils/types";
 import "./page-title.scss";
 
 const PageTitle = ({ text, goBack, size }: PageTitleProps) => {

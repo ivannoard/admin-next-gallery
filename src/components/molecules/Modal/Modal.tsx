@@ -7,7 +7,7 @@ type ModalDataType = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   dataPreviewImages?: File[];
-  setDataPreviewImages: React.Dispatch<React.SetStateAction<File[]>>;
+  setDataPreviewImages?: React.Dispatch<React.SetStateAction<File[]>>;
 };
 
 function ModalPreviewEdit({ data, image }: ModalType) {
