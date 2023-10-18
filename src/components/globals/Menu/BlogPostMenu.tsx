@@ -12,7 +12,7 @@ const BlogPostMenu = () => {
         <h5 className="sub-pagetitle">Viewer Permission</h5>
         <div className="flex button-wrapper">
           <Button name="Save to draft" classButton="button-outline" />
-          <Button name="Save" classButton="button-primary" />
+          <Button name="Publish" classButton="button-primary" />
         </div>
       </div>
     </>
