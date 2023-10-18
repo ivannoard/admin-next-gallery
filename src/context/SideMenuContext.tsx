@@ -17,35 +17,23 @@ const initialState = {
 
 const SideMenuReducers = (state: SideMenuType, action: SideMenuActionType) => {
   return { ...state, menuActive: action.payload };
-  //   switch (action.type) {
-  //     case "show":
-  //       return { ...state, menuActive: action.payload };
-  //     case "hide":
-  //       return { ...state, menuActive: action.payload };
-  //     default:
-  //       break;
-  //   }
 };
 
 export const SideMenuContext = createContext<{
-  state: SideMenuType;
-  dispatch: React.Dispatch<unknown>;
+  menuActiveState: SideMenuType;
+  dispatch: React.Dispatch<SideMenuActionType>;
 }>({
-  state: initialState,
-  dispatch: () => null,
+  menuActiveState: initialState,
+  dispatch: () => {},
 });
 
 export const SideMenuProvider = ({ children }: SideMenuProvider) => {
-  const [state, dispatch] = React.useReducer(SideMenuReducers, initialState);
-  const value = {
-    menuActive: state.menuActive,
-    setMenuActive: (item) => {
-      console.log(item);
-      dispatch({ type: item, payload: item });
-    },
-  };
+  const [menuActiveState, dispatch] = React.useReducer(
+    SideMenuReducers,
+    initialState
+  );
   return (
-    <SideMenuContext.Provider value={value}>
+    <SideMenuContext.Provider value={{ menuActiveState, dispatch }}>
       {children}
     </SideMenuContext.Provider>
   );

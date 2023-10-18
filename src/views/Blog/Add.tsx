@@ -9,7 +9,7 @@ import QuillToolbar, {
 } from "../../components/molecules/QuillEditor";
 import { LayoutContext } from "../../context/LayoutContext";
 const BlogAdd = () => {
-  const { showMenu } = React.useContext(LayoutContext);
+  const { state } = React.useContext(LayoutContext);
   const [data, setData] = React.useState("");
 
   return (
@@ -21,7 +21,7 @@ const BlogAdd = () => {
           <h3 className="sub-pagetitle">Choose Photos For Thumbnail</h3>
           <div
             className={`blog-add-photos-wrapper ${
-              showMenu === "show" ? "six-grid" : "seven-grid"
+              state.showMenu === "show" ? "six-grid" : "seven-grid"
             }`}
           >
             {[

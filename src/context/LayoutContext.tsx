@@ -1,5 +1,4 @@
-import React from "react";
-import { createContext } from "react";
+import React, { createContext } from "react";
 
 type LayoutProvider = {
   children: JSX.Element;
@@ -8,8 +7,8 @@ type LayoutType = {
   showMenu: string;
 };
 type LayoutActionType = {
-  type: "show" | "hide";
-  payload: "show" | "hide";
+  type: string;
+  payload: string;
 };
 const initialState = {
   showMenu: "",
@@ -22,27 +21,24 @@ const LayoutReducers = (state: LayoutType, action: LayoutActionType) => {
     case "hide":
       return { ...state, showMenu: action.payload };
     default:
-      break;
+      return state;
   }
 };
 
 export const LayoutContext = createContext<{
   state: LayoutType;
-  dispatch: React.Dispatch<unknown>;
+  dispatch: React.Dispatch<LayoutActionType>;
 }>({
   state: initialState,
-  dispatch: () => null,
+  dispatch: () => {},
 });
 
 export const LayoutProvider = ({ children }: LayoutProvider) => {
   const [state, dispatch] = React.useReducer(LayoutReducers, initialState);
-  const value = {
-    showMenu: state.showMenu,
-    funcShowHideMenu: (typeMenu: string) => {
-      dispatch({ type: typeMenu, payload: typeMenu });
-    },
-  };
+
   return (
-    <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
+    <LayoutContext.Provider value={{ state, dispatch }}>
+      {children}
+    </LayoutContext.Provider>
   );
 };

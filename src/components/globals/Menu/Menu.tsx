@@ -5,17 +5,17 @@ import { capitalizeWord } from "../../../utils/words";
 import { SideMenuContext } from "../../../context/SideMenuContext";
 
 const Menu = () => {
-  const { showMenu } = React.useContext(LayoutContext);
-  const { menuActive, setMenuActive } = React.useContext(SideMenuContext);
+  const { state } = React.useContext(LayoutContext);
+  const { menuActiveState, dispatch } = React.useContext(SideMenuContext);
   // const [menuActive, setMenuActive] = React.useState<string>("");
   const menuItems = ["blog", "gallery", "photos", "projects"];
-
-  console.log(menuActive);
 
   return (
     <>
       <div
-        className={`menu ${showMenu === "show" ? "show-menu" : "hide-menu"}`}
+        className={`menu ${
+          state.showMenu === "show" ? "show-menu" : "hide-menu"
+        }`}
       >
         <input
           type="text"
@@ -30,15 +30,15 @@ const Menu = () => {
                 key={index}
                 className="sub-pagetitle underline"
                 onClick={() => {
-                  if (menuActive === item) {
-                    return setMenuActive("");
+                  if (menuActiveState.menuActive === item) {
+                    return dispatch({ type: "", payload: "" });
                   }
-                  setMenuActive(item);
+                  dispatch({ type: item, payload: item });
                 }}
               >
                 {capitalizeWord(item)} Overview
               </h5>
-              {menuActive === item && (
+              {menuActiveState.menuActive === item && (
                 <div className="menu-item-content">asd</div>
               )}
             </>

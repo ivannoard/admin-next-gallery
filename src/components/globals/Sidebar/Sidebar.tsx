@@ -8,7 +8,7 @@ import { capitalizeWord } from "../../../utils/words";
 import { sideNav } from "./dummy";
 import "./sidebar.scss";
 const Sidebar = () => {
-  const { showMenu, funcShowHideMenu } = React.useContext(LayoutContext);
+  const { state, dispatch } = React.useContext(LayoutContext);
   return (
     <>
       <div className="sidebar-container">
@@ -33,7 +33,10 @@ const Sidebar = () => {
             data-tooltip-place="right"
             className="custom-tooltip button-icon"
             onClick={() =>
-              funcShowHideMenu(showMenu === "show" ? "hide" : "show")
+              dispatch({
+                type: state.showMenu === "show" ? "hide" : "show",
+                payload: state.showMenu === "show" ? "hide" : "show",
+              })
             }
           >
             <Tooltip id={"show-menu"} />

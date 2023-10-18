@@ -5,7 +5,7 @@ import "./dashboard-layout.scss";
 import { LayoutContext } from "../../../context/LayoutContext";
 
 const DashboardLayout = () => {
-  const { showMenu } = React.useContext(LayoutContext);
+  const { state } = React.useContext(LayoutContext);
   return (
     <>
       <main className="home-wrapper">
@@ -16,7 +16,9 @@ const DashboardLayout = () => {
           <Menu />
           <div
             className={`main-content ${
-              showMenu === "show" ? "show-main-content" : "hide-main-content"
+              state.showMenu === "show"
+                ? "show-main-content"
+                : "hide-main-content"
             }`}
           >
             <LoadPage>
