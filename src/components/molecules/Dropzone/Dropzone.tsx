@@ -1,4 +1,4 @@
-import { useDropzone } from "React-dropzone";
+import { useDropzone } from "react-dropzone";
 import { useEffect } from "react";
 import { BsFillCameraFill } from "react-icons/bs";
 import { Dropzone as DropzoneType } from "../../../utils/types";

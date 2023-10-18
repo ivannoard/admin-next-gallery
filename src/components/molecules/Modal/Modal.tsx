@@ -43,9 +43,10 @@ const Modal = ({
     switch (type) {
       case "preview-delete":
         if (dataPreviewImages && data) {
-          setDataPreviewImages(
-            dataPreviewImages?.filter((item) => item.name !== data.name)
-          );
+          if (setDataPreviewImages !== undefined)
+            setDataPreviewImages(
+              dataPreviewImages?.filter((item) => item.name !== data.name)
+            );
           setIsOpen(false);
         }
         break;
